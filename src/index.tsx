@@ -3,16 +3,11 @@ import { differenceInCalendarDays, endOfMonth, endOfWeek, getWeeksInMonth, isSam
 import { add, startOfMonth, sub, getDate, startOfWeek } from "date-fns/esm";
 import format from "date-fns/format";
 
-
-
-
 interface CalendarRecord {
   day: Date,
   isCurrentDate: boolean,
   isCurrentMonth: boolean
 }
-
-
 
 function getDaysArray(selectedMonth: Date): CalendarRecord[] {
   const start = startOfMonth(selectedMonth)
@@ -55,24 +50,29 @@ function getWeeks(days: CalendarRecord[], currentDate: Date): CalendarRecord[][]
 }
 
 
+const defaultRenderWeekday = (weekday: string): JSX.Element =>
+  <td key={weekday}>{weekday}</td>
 
-export const Calendar = () => {
+const defaultRenderDay = (day: CalendarRecord): JSX.Element =>
+  <td key={day.day.toISOString()}>
+    {getDate(day.day)}
+  </td>
 
+export const Calendar = (p: {
+  renderWeekday?: typeof defaultRenderWeekday,
+  renderDay?: typeof defaultRenderDay,
+}) => {
   const weekdays = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"]
-  const [toggleStyle, setToggleStyle] = useState(false)
 
   const [currentDate, setCurrentDate] = useState(new Date())
   const daysInMonth = getDaysArray(currentDate)
   const rows = getWeeks(daysInMonth, currentDate)
 
-  const [selectedDay, setSelectedDay] = useState<Date>()
   function nextMonth() {
-    setToggleStyle(!toggleStyle)
     setCurrentDate(add(currentDate, { months: 1 }))
   }
 
   function prevMonth() {
-    setToggleStyle(!toggleStyle)
     setCurrentDate(sub(currentDate, { months: 1 }))
   }
   return (
@@ -90,19 +90,12 @@ export const Calendar = () => {
       </thead>
       <tbody>
         <tr>
-          {weekdays.map(weekday => (
-            <td key={weekday}><small>{weekday}</small></td>
-          ))}
+          {weekdays.map(p.renderWeekday ?? defaultRenderWeekday)}
+          {/* <td key={weekday}><small>{weekday}</small></td> */}
         </tr>
         {rows.map(row => (
           <tr key={row[0].day.toISOString()} >
-            {row.map(day => (
-              <td
-                key={day.day.toISOString()}
-              >
-                {getDate(day.day)}
-              </td>
-            ))}
+            {row.map(p.renderDay ?? defaultRenderDay)}
           </tr>
         ))}
       </tbody>
