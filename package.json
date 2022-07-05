@@ -5,7 +5,7 @@
   "source": "demo/index.html",
   "scripts": {
     "start": "parcel",
-    "build-demo": "parcel build --dist-dir demo-build",
+    "build-demo": "parcel build --dist-dir docs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
