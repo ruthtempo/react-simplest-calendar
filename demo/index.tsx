@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 
 const App = () => {
   return (
-    <>
+    <div className="d-flex flex-column align-items-center">
       <h1 className="text-center py-4">
         React Simple Calendar
       </h1>
@@ -38,7 +38,7 @@ const App = () => {
           </Table>
         }
       />
-    </>
+    </div>
   )
 }
 
