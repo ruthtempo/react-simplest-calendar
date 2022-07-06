@@ -1,5 +1,5 @@
 {
-  "name": "react-simple-calendar",
+  "name": "react-simplest-calendar",
   "version": "1.0.0",
   "description": "",
   "source": "src/index.tsx",
@@ -7,9 +7,8 @@
   "module": "build/module.js",
   "types": "build/types.d.ts",
   "scripts": {
-    "start": "parcel demo/index.html",
+    "start": "rm -r docs && parcel demo/index.html --dist-dir docs --public-url .",
     "build": "parcel build",
-    "build-demo": "parcel build demo/index.html --dist-dir docs --public-url .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

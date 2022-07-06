@@ -1,4 +1,4 @@
-# react-simple-calendar
+# react-simplest-calendar
 
 ## Peer Dependencies
 
