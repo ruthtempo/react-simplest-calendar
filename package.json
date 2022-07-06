@@ -13,14 +13,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ruthtempo/react-simple-calendar.git"
+    "url": "git+https://github.com/ruthtempo/react-simplest-calendar.git"
   },
   "author": "ruth temporal",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ruthtempo/react-simple-calendar/issues"
+    "url": "https://github.com/ruthtempo/react-simplest-calendar/issues"
   },
-  "homepage": "https://github.com/ruthtempo/react-simple-calendar#readme",
+  "homepage": "https://github.com/ruthtempo/react-simplest-calendar#readme",
   "peerDependencies": {
     "date-fns": ">=2.0.0",
     "react": ">=17.0.0"
