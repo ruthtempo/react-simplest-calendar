@@ -1,6 +1,10 @@
 # react-simple-calendar
 
+## Peer Dependencies
+
+Requires [React]("https://reactjs.org/") and [date-fns]("https://date-fns.org/")
 ## Props
+
 
 | name     | type    | description | default |
 |----------|---------|-------------|--------|
