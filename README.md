@@ -2,7 +2,7 @@
 
 ## Peer Dependencies
 
-Requires [React]("https://reactjs.org/") and [date-fns]("https://date-fns.org/")
+Requires [React](https://reactjs.org/) and [date-fns](https://date-fns.org/)
 ## Props
 
 
