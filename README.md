@@ -1,5 +1,7 @@
 # react-simplest-calendar
 
+`npm install react-simplest-calendar`
+
 ## Peer Dependencies
 
 Requires [React](https://reactjs.org/) and [date-fns](https://date-fns.org/)
